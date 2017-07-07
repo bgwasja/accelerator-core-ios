@@ -20,6 +20,13 @@ typedef void (^OTMultiPartyCommunicatorBlock)(OTCommunicationSignal signal, OTMu
 
 @interface OTMultiPartyCommunicator : NSObject
 
+- (void)sessionDidConnect:(nonnull OTSession*)session;
+- (void)sessionDidDisconnect:(nonnull OTSession*)session;
+- (void)session:(nonnull OTSession*)session didFailWithError:(nonnull OTError*)error;
+- (void)session:(nonnull OTSession*)session streamCreated:(nonnull OTStream*)stream;
+- (void)session:(nonnull OTSession*)session streamDestroyed:(nonnull OTStream*)stream;
+
+
 /**
  *  The object that acts as the data source of the communicator.
  *
